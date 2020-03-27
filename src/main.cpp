@@ -44,7 +44,9 @@ int main(int argc, char* argv[])
             for (int i = 0; i < queue.size(); i++) {
                 QVariant& v = queue[i];
                 QMap<QString, QVariant> m(v.toMap());
-                if (m["isPlayingNow"].toBool()) {
+                if (m["dir"].toString() == o.value("dir").toString()) {
+                    qDebug() << "salve";
+                    o.insert("index", pos);
                     p.updateSongData(i, QVariant(o));
                 }
             }
