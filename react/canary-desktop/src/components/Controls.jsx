@@ -21,6 +21,7 @@ function Controls({playerObject, libObject}){
     });
 
     function changeRating(newRating){
+        console.log(playerObject.nowPlaying.index);
         libObject.libClass.setRating(newRating * 10, Number(nowPlayingData.index), nowPlayingData).then(()=>{
             libObject.libClass.updateSong(nowPlayingData.index, true);
         });

@@ -15,26 +15,15 @@ function AlbumPage({location, playerObject}){
         setNowPlayingSong(dir);
     }
 
-    /*function changeSong(pos, songObject){
-        if(songObject.albumid !== data.tracks[0].albumid){
-            return;
-        }
-
-        for(let i=0; i < data.tracks.length; i++){
-            if(data.tracks[i].dir === songObject.dir){
-                data.tracks[i] = songObject;
-                break;
-            }
-        }
-    }*/
-
+    /*eslint-disable */
     useEffect(() => {
         playerObject.setNowPlayingInfo.connect(c);
 
         return() =>{
             playerObject.setNowPlayingInfo.disconnect(c);
         }
-    });
+    },  []);
+    /*eslint-enable */
     let albumLength = 0;
     console.log(data);
 
