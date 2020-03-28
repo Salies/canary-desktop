@@ -6,6 +6,8 @@
 }
 
 .albumlist{
+    width:calc(100% - 200px);
+    float:right;
     overflow:auto;
 }
 
@@ -25,4 +27,21 @@
     display:block;
     position:absolute;
     bottom:0;
+}
+
+.artist-list{
+    left:60px;
+    top:24px;
+    width:200px;
+    height: calc(100vh - 126px);
+    overflow:auto;
+    position:fixed;
+}
+
+.artist-list > span{
+    display:block;
+}
+
+.artist-list > span:hover{
+    background:rgba(255,255,255,0.1);
 }
